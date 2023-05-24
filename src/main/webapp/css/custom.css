@@ -1,0 +1,367 @@
+@charset "ISO-8859-1";
+
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+#insertSubmit, #updateSubmit{
+	width: 20% !important;
+}
+ 
+ #titleHead:hover, #searchType:hover, #dataFormat:hover{
+ 	cursor: pointer;
+ }
+/* Edit and Delete buttons by default hidden*/
+.actionButtons{
+	display: flex;
+	align-items: flex-end;
+	padding: 0;
+	opacity:0;
+	transition: opacity 0.3s, padding 0.3s;
+}
+
+/* Edit and Delete buttons appear when hovering over table row */
+table tr:hover .actionButtons{
+	opacity: 1;
+	padding: 0px;
+}
+
+/* Modal buttons by default hidden*/
+.buttons{
+	display: flex;
+	align-items: flex-end;
+	padding: 0;
+	opacity:0;
+	transition: opacity 0.3s, padding 0.3s;
+}
+
+/* Modal buttons appear when hovering over modal content*/
+.modal-content:hover .buttons{
+	opacity: 1;
+	padding: 2em;
+}
+
+table tr:hover .buttons{
+	opacity: 1;
+	padding: 0px;
+}
+
+button {
+	position: relative;
+}
+
+button::before{
+	position: absolute;
+	right: -25px;
+	top: -10px;
+}
+
+table {
+    font-family: Tahoma, Geneva, sans-serif;
+    margin-left:auto;
+    margin-right:auto;
+    color: white;
+    padding-top: 50px;
+	margin-top: 20px;
+	margin-left: 100px;
+	margin-right: 100px;
+	background: rgba(68, 36, 67, .3);
+}
+
+.card{
+	background: #4A3E65 !important;
+	margin-top: 20px;
+	margin-left: 100px;
+	margin-right: 100px;
+	color: white;
+}
+table td {
+	padding: 15px !important;
+}
+
+/* Animation when hovering over table row, changing row's background*/
+table tr:hover:not(.headings){
+	background: #4A3E65;
+	color: white;
+	transform: scale(1.03);
+}
+
+.btn-danger{
+    background-color: #8F1800  !important;
+    border:  #8F1800  !important;
+}
+
+.btn-danger:hover{
+    background-color: #E02500  !important;
+    border:  #E02500  !important;
+}
+
+.btn-warning:not(#updateSubmit){
+    background-color: #A35200  !important;
+    border:  #A35200  !important;
+}
+
+.btn-warning:hover:not(#updateSubmit){
+    background-color: #E07000  !important;
+    border:  #E07000  !important;
+}
+
+h1{
+	font-family: Arial;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+
+#headerT {
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+
+body{
+background: linear-gradient(#293851, #511A3B);
+}
+
+.header_container{
+	width: 100%;
+	height: 400px;
+	display: block;
+	padding: 60px;
+  	text-align: center;
+ 	background: #2e354f;
+  	font-size: 15px;
+}
+
+.h_inner{
+	width: 30%;
+	height: 100%;
+	display: block;
+	margin: 0 auto;
+}
+
+.logo_container{
+	padding-left: 16%;
+	display: table;
+	float: left;
+}
+
+.logo_container h1{
+	color: white;
+	height: 70%;
+	display: table;
+	vertical-align: middle;
+	font-family: 'Arial';
+	font-size: 35px;
+	font-weight: 200;
+}
+.logo_container h1 span {
+	font-weight: 600;
+}
+
+.header_content {
+	height: 100%;
+	float: left;
+	padding-top: 40%;
+	padding-left: 14%;
+}
+
+.insertModal{
+	float: left;
+	width: 100px !important;
+	height: 40px !important;
+	background: #1B4259 !important;
+	transition: all .5s ease-in-out;
+	border-radius: 10px !important;
+}
+
+.insertModal:hover, .insertBtn:hover{
+  box-shadow: 10px 10px 10px  #382F4C;
+  border-radius: 10px;
+  transform: scale(1.2);
+}
+
+.insertModal:active, .insertModal:inactive {
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.insertModal:focus, .insertModal:target, #dataFormat:focus, #dataFormat:target{
+	border: none;
+}
+
+.header_form{
+	float: left;
+	padding-left: 20%;
+}
+
+.input-group{
+	width: 80% !important;
+	padding-left: 20%;
+}
+
+#insertBtn{
+	width: 10%; 
+	font-size: 20px; 
+	color: white;
+}
+
+.insertBtn{
+	float: left;
+	width: 100px !important;
+	height: 40px !important;
+	background: #1B4259 !important;
+	transition: all .5s ease-in-out;
+	border-radius: 10px !important;
+	border: none !important;
+}
+
+#dataFormat{
+	width:200%;
+	height: 40px;
+	text-align: center;
+	border-radius: 10px;
+	color: white;
+	background: #1B4259;
+	border-color: #1B4259;
+}
+
+#dataFormat:hover{
+	box-shadow: 10px 10px 10px #382F4C;
+	  border-radius: 10px;
+	  margin: 10x;
+}
+
+input[type=text]:focus {
+	border-color: #511A3B;
+	outline: #511A3B;
+}
+
+
+input:invalid{
+	animation: invalidInput .3s;
+}
+
+/* Animation of imput fields when invalid input si inserted*/
+
+@keyframes invalidInput {
+	0% { transform: skew(-15deg)}
+	25% { transform: skew(15deg)}
+	50% { transform: skew(-15deg)}
+	100% { transform: skew(0deg)}
+}
+
+.input-group, .btn-check {
+	margin-top: 20px;
+}
+
+#paginationRegion{
+	text-align: center !important;
+	color: black !important;
+	margin-left: 35%;
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+a{
+	color: black !important;
+}
+
+li .disabled{
+	background-color: lightgrey !important;
+}
+
+.orderButtons{
+	 margin-bottom: 29px;
+	 margin-top: 20px;
+	 
+}
+
+#filmRegion {
+	padding-top:50px;
+}
+@media 
+only screen and (max-width: 1500px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+	#paginationRegion{
+	margin-left: 30%;
+}
+}
+
+@media 
+only screen and (max-width: 1250px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+	#paginationRegion{
+	margin-left: 25%;
+}
+}
+
+/* Improving the responsivity of the website when the viewport is less than 1000 */
+@media 
+only screen and (max-width: 930px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	.header_content {
+		padding-left: 50%;
+	}
+	
+	#searchType{
+		width: 30%;}
+		.header_content {
+		margin-left: -40%;
+		float: left;
+	}
+	
+	/* Hide table headers */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	.headings { 
+		display:none;
+		border: none;
+	}
+	
+	table{
+	border: none;
+	}
+	
+	td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	#paginationRegion{
+	margin-left: 20%;
+}
+}
+
+
+@media 
+only screen and (max-width: 800px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+	#paginationRegion{
+	margin-left: 15%;
+}
+.logo_container h1{
+		font-size: 20px;
+	}
+	.header_content {
+		padding-left: 30%;
+	}
+}
+
+
